@@ -4,7 +4,7 @@ window.google = {
         BicyclingLayer: function() {},
         Circle: function() {
             return {
-                bindTo: function () { },
+                bindTo: function() {},
                 getBounds: function() {
                     return new google.maps.LatLngBounds();
                 },
@@ -28,9 +28,9 @@ window.google = {
             DRIVING: 1
         },
         DirectionsUnitSystem: {},
-        DistanceMatrixElementStatus: {},
         DistanceMatrixService: function() {},
         DistanceMatrixStatus: {},
+        DistanceMatrixElementStatus: {},
         ElevationService: function() {},
         ElevationStatus: {},
         FusionTablesLayer: function() {},
@@ -95,7 +95,7 @@ window.google = {
             return {
                 position: new google.maps.LatLng(),
                 positionData: {},
-                setMap: function () { },
+                setMap: function() {},
                 set: function () {}
             };
         },
@@ -104,7 +104,7 @@ window.google = {
         },
         MaxZoomService: function () {
             return {
-                getMaxZoomAtLatLng: function () { }
+                getMaxZoomAtLatLng: function() {}
             };
         },
         MaxZoomStatus: {},
@@ -124,7 +124,7 @@ window.google = {
         Polygon: function() {},
         Polyline: function () {
             return {
-                setMap: function () { },
+                setMap: function() {},
                 getBounds: function() {
                     return new google.maps.LatLngBounds();
                 }
@@ -138,16 +138,19 @@ window.google = {
         },
         StreetViewCoverageLayer: function() {},
         StreetViewPanorama: function() {},
+        StreetViewPreference: {},
         StreetViewService: function() {},
         StreetViewStatus: {},
+        StreetViewSource: {},
         StrokePosition: {},
         StyledMapType: function() {},
         SymbolPath: {},
         TrafficLayer: function() {
             return {
-                setMap: function () { }
+                setMap: function() {}
             };
         },
+        TrafficModel: function () {},
         TransitLayer: function() {},
         TransitMode: {},
         TransitRoutePreference: {},
@@ -156,18 +159,18 @@ window.google = {
             METRIC: 1
         },
         ZoomControlStyle: {},
-        __gjsload__: function () { },
+        __gjsload__: function() {},
         event: {
-            trigger: function () { },
-            addListener: function () { },
-            addListenerOnce: function() { },
-            removeListener: function () { },
+            trigger: function() {},
+            addListener: function() {},
+            addListenerOnce: function() {},
+            removeListener: function() {},
             clearInstanceListeners: function() {}
         },
         places: {
             AutocompleteService: function () {
                 return {
-                    getPlacePredictions: function () { }
+                    getPlacePredictions: function() {}
                 };
             }
         }
