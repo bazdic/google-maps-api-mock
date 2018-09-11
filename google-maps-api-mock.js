@@ -8,6 +8,8 @@ window.google = {
                 getBounds: function() {
                     return new google.maps.LatLngBounds();
                 },
+                getCenter: function() { return new google.maps.LatLng(); },
+                getRadius: function() {},
                 setMap: function() {}
             }
         },
@@ -22,10 +24,10 @@ window.google = {
             return {};
         },
         DirectionsStatus: {
-            OK: 1
+            OK: "OK"
         },
         DirectionsTravelMode: {
-            DRIVING: 1
+            DRIVING: "DRIVING"
         },
         DirectionsUnitSystem: {},
         DistanceMatrixService: function() {},
@@ -34,9 +36,15 @@ window.google = {
         ElevationService: function() {},
         ElevationStatus: {},
         FusionTablesLayer: function() {},
-        Geocoder: function() {},
+        Geocoder: function() {
+            return {
+                geocode: function() {}
+            };
+        },
         GeocoderLocationType: {},
-        GeocoderStatus: {},
+        GeocoderStatus: {
+            OK: "OK"
+        },
         GroundOverlay: function() {},
         ImageMapType: function () {},
         InfoWindow: function () {
@@ -62,7 +70,11 @@ window.google = {
                 getCenter: function() {}
             };
         },
-        MVCArray: function() {},
+        MVCArray: function() {
+            return {
+                push: function() { }
+            };
+        },
         MVCObject: function() {},
         Map: function () {
             var controls = [];
@@ -81,14 +93,14 @@ window.google = {
                 fitBounds: function() {},
                 getProjection: function() {},
                 setOptions: function() {},
-                getStreetView: function() {}
+                getStreetView: function() {
+                    return new google.maps.StreetViewPanorama();
+                }
             };
         },
         MapTypeControlStyle: {},
-        MapTypeId: function() {
-            return {
-                ROADMAP: 1
-            };
+        MapTypeId: {
+            ROADMAP: "ROADMAP"
         },
         MapTypeRegistry: function() {},
         Marker: function () {
@@ -96,7 +108,8 @@ window.google = {
                 position: new google.maps.LatLng(),
                 positionData: {},
                 setMap: function() {},
-                set: function () {}
+                set: function () {},
+                getDraggable: function() {}
             };
         },
         MarkerImage: function () {
@@ -121,13 +134,23 @@ window.google = {
                 y: 0
             };
         },
-        Polygon: function() {},
+        Polygon: function() {
+            return {
+                setMap: function() {},
+                setPaths: function() {},
+                getPath: function() {},
+                set: function() {},
+                get: function() {}
+            };
+        },
         Polyline: function () {
             return {
                 setMap: function() {},
                 getBounds: function() {
                     return new google.maps.LatLngBounds();
-                }
+                },
+                setPath: function() {},
+                setOptions: function() {}
             };
         },
         Rectangle: function() {},
@@ -137,9 +160,20 @@ window.google = {
             return {};
         },
         StreetViewCoverageLayer: function() {},
-        StreetViewPanorama: function() {},
+        StreetViewPanorama: function() {
+            return {
+                getVisible: function() {},
+                setVisible: function() {},
+                setPov: function() {},
+                setPosition: function() {}
+            }
+        },
         StreetViewPreference: {},
-        StreetViewService: function() {},
+        StreetViewService: function() {
+            return {
+                getPanoramaByLocation: function() {}
+            };
+        },
         StreetViewStatus: {},
         StreetViewSource: {},
         StrokePosition: {},
@@ -156,7 +190,8 @@ window.google = {
         TransitRoutePreference: {},
         TravelMode: {},
         UnitSystem: {
-            METRIC: 1
+            METRIC: 0,
+            IMPERIAL: 1
         },
         ZoomControlStyle: {},
         __gjsload__: function() {},
