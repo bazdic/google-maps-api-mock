@@ -91,11 +91,26 @@ window.google = {
                     return new google.maps.LatLngBounds();
                 },
                 fitBounds: function() {},
-                getProjection: function() {},
+                getProjection: function() {
+                    return new google.maps.MapCanvasProjection();
+                },
                 setOptions: function() {},
                 getStreetView: function() {
                     return new google.maps.StreetViewPanorama();
                 }
+            };
+        },
+        MapCanvasProjection: function() {
+            return {
+                fromContainerPixelToLatLng: function() { },
+                fromDivPixelToLatLng: function() { },
+                fromLatLngToContainerPixel: function() {
+                    return new google.maps.Point();
+                },
+                fromLatLngToDivPixel: function() {
+                    return new google.maps.Point();
+                },
+                getWorldWidth: function() { }
             };
         },
         MapTypeControlStyle: {},
@@ -109,6 +124,7 @@ window.google = {
                 positionData: {},
                 setMap: function() {},
                 set: function () {},
+                get: function () {},
                 getDraggable: function() {}
             };
         },
@@ -124,7 +140,9 @@ window.google = {
         NavigationControlStyle: {},
         OverlayView: function () {
             return {
-                getProjection: function () {},
+                getProjection: function() {
+                    return new google.maps.MapCanvasProjection();
+                },
                 setMap: function() {}
             };
         },
